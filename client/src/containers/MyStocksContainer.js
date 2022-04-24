@@ -10,29 +10,40 @@ const MyStockContainer = () => {
 
     useEffect(() => {
         fetchDB()
-        tickerMap()
-        fetchMyStockObj(myStockSearchTerms);
         setTimeout(() => {
             setIsLoading(false)
-        }, 2000)
+        }, 5000)
     }, [])
 
     const fetchDB = function() {
         fetch('http://localhost:9000/api/userStocks/')
         .then(res => res.json())
+        // .then (data => console.log(data))
         .then(data => setUserDetails(data))
     }
 
+    useEffect(() => {
+        if (userDetails !== null){
+            tickerMap()
+        }
+    }, [userDetails])
+
     const tickerMap = function() {
-        let newArray = []
-        newArray = userDetails.stocksHeld.map((stock) => {
-            return stock
+        
+        const newArray = userDetails[0].stocksHeld.map((stock) => {
+            return stock.stock
         }) 
         setMyStockSearchTerms(newArray)
     }
 
+    useEffect(() => {
+        if (myStockSearchTerms.length > 0){
+            fetchMyStockObj(myStockSearchTerms);
+        }
+    }, [myStockSearchTerms])
+
     const fetchMyStockObj = function(searchValues){
-        fetch(`https://api.twelvedata.com/time_series?symbol=${searchValues.toString()}&interval=1month&apikey=4d3df07bd71d4d198ec7b0071f70c982`)
+        fetch(`https://api.twelvedata.com/time_series?symbol=${searchValues.toString()}&interval=1month&apikey=8603921c05d4466f92b11e6ebb617a1b`)
         .then(res => res.json())
         // .then(data => console.log(data))
         .then(data => setMyStockObj(data))
@@ -53,9 +64,9 @@ const MyStockContainer = () => {
     return(
         <div>
             <h1>My Stocks</h1>
-            {/* {isLoading === true ? <p>Loading...Loading...Loading...</p> : <p>{myStockObjectList[1].meta.symbol}</p>} */}
+            {isLoading === true ? <p>Loading...Loading...Loading...</p> : <p>{myStockObjectList[1].meta.symbol}</p>}
         </div>
     )
 }
 
-export default MyStockContainer
+export default MyStockContainer;
