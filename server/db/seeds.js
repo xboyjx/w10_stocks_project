@@ -1,7 +1,7 @@
 use userStocks;
 db.dropDatabase();
 
-db.stocks.insertMany([
+db.userStocks.insertMany([
     
     {
         username: "Dennis",
