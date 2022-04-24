@@ -6,6 +6,7 @@ const MyStockContainer = () => {
     const [myStockObj, setMyStockObj] = useState(null)
     const [myStockObjectList, setMyStockObjectList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [userDetails, setUserDetails] = useState(null)
 
     useEffect(() => {
         fetchMyStockObj(myStockSearchTerms);
@@ -19,6 +20,18 @@ const MyStockContainer = () => {
         .then(res => res.json())
         // .then(data => console.log(data))
         .then(data => setMyStockObj(data))
+    }
+
+    const fetchDB = function() {
+        fetch('http://localhost:9000/api/userStocks/')
+        .then(res => res.json())
+        .then(data => setUserDetails(data))
+    }
+
+    const tickerMap = function() {
+        setUserDetails.stocks.map(() => {
+            
+        })
     }
 
     useEffect(() => {
