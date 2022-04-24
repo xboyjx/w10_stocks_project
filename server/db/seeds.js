@@ -7,7 +7,7 @@ db.userStocks.insertMany([
         username: "Dennis",
         email: "dennis@dennis.com",
         stocksHeld: [{
-            stock: "APPL",
+            stock: "AAPL",
             noHeld: 100
         },
         {
