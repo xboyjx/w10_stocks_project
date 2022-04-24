@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import MyStocksList from '../components/MyStocks/MyStocksList';
 
 const MyStockContainer = () => {
 
@@ -64,7 +65,7 @@ const MyStockContainer = () => {
     return(
         <div>
             <h1>My Stocks</h1>
-            {isLoading === true ? <p>Loading...Loading...Loading...</p> : <p>{myStockObjectList[1].meta.symbol}</p>}
+            {isLoading === true ? <p>Loading...Loading...Loading...</p> : <MyStocksList stocks={myStockObjectList} />}
         </div>
     )
 }
