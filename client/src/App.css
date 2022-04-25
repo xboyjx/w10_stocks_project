@@ -58,10 +58,23 @@
 }
 
 .external-stocks-container{
+  padding:1rem;
   grid-area: external-stocks-container;
 }
 
 th, td, table {
   border: 1px solid black;
   margin: 0px
+}
+
+.my-stock-items-graph{
+  padding:0rem;
+}
+
+.my-stock-items-graph > .stock-details{
+  padding-left:1rem;
+}
+
+.my-stock-items-graph > .stock-details h3, .my-stock-items-graph > .stock-details h4{
+  margin:0;
 }
