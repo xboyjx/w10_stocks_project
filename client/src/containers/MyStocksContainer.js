@@ -1,5 +1,10 @@
 import {useState, useEffect} from 'react';
 import MyStocksList from '../components/MyStocks/MyStocksList';
+
+import {css} from '@emotion/react';
+// import ClipLoader from 'react-spinners/ClipLoader';
+import PulseLoader from 'react-spinners/PulseLoader'; //https://www.npmjs.com/package/react-spinners
+
 import MyStockItemsGraph from '../components/MyStocks/MyStockItemsGraph';
 
 const MyStockContainer = () => {
@@ -7,7 +12,7 @@ const MyStockContainer = () => {
     const [myStockSearchTerms, setMyStockSearchTerms] = useState([])
     const [myStockObj, setMyStockObj] = useState(null)
     const [myStockObjectList, setMyStockObjectList] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [loading, setIsLoading] = useState(true)
     const [userDetails, setUserDetails] = useState(null)
     const [selectedStock, setSelectedStock] = useState(null)
 
@@ -73,7 +78,7 @@ const MyStockContainer = () => {
     return(
         <div>
             <h1>My Stocks</h1>
-            {isLoading === true ? <p>Loading...Loading...Loading...</p> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} />}
+            {loading === true ? <PulseLoader /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect}/>}
             {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} /> : null}
         </div>
     )
