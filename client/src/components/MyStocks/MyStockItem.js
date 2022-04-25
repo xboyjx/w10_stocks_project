@@ -5,6 +5,7 @@ const MyStockItem = ({stock, index, handleStockSelect, userDetails}) => {
         handleStockSelect(index)
     }
 
+
     return(
         <>
             <tr>
