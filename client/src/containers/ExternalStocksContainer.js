@@ -1,5 +1,4 @@
 import ExternalStockSearchForm from "../components/MyExternalStocks/ExternalStockSearchForm";
-import ExternalStockDetail from "../components/MyExternalStocks/ExternalStockDetail";
 import SearchResultsList from "../components/MyExternalStocks/SearchResultsList";
 import { useState, useEffect } from 'react';
 
@@ -30,7 +29,7 @@ const ExternalStocksContainer = () => {
         <h1>Potato</h1>
         <ExternalStockSearchForm handleSearchTerm={handleSearchTerm} />
     {searchedResults.length > 0? <SearchResultsList searchedResults={searchedResults}/>: null }
-        <ExternalStockDetail />
+
         </>
     )
 
