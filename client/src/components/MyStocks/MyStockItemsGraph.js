@@ -24,7 +24,7 @@ const MyStockItemsGraph = ({selectedStock}) => {
     const options = {
        
         title: {
-            text:'last 30 months stock open price'
+            text:'last 30 months stock close price'
     },
     series: [
         {
