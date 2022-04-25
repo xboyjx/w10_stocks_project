@@ -52,14 +52,24 @@
 }
 
 .my-stocks-right{
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius:5px;
   flex:50%;
   max-height:80vh;
+  
 }
 
-.external-stocks-container{
-  padding:1rem;
-  grid-area: external-stocks-container;
+.my-stocks-list > h2{
+  font-size:1.2rem;
+}
+
+.table > tr > th  {
+  padding:0.5rem;
+}
+
+td{
+  padding:0.25rem;
+  text-align:center;
 }
 
 th, td, table {
@@ -77,4 +87,9 @@ th, td, table {
 
 .my-stock-items-graph > .stock-details h3, .my-stock-items-graph > .stock-details h4{
   margin:0;
+}
+
+.external-stocks-container{
+  padding:1rem;
+  grid-area: external-stocks-container;
 }
