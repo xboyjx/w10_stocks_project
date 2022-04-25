@@ -76,10 +76,17 @@ const MyStockContainer = () => {
     }
 
     return(
-        <div>
-            <h1>My Stocks</h1>
-            {loading === true ? <PulseLoader /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails}/>}
-            {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} /> : null}
+        <div className="my-stocks-container">
+            
+            <div className="my-stocks-container-box">
+            <div className="my-stocks-left">
+            <h2>My Stocks</h2>
+                {loading === true ? <PulseLoader /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails}/>}
+            </div>
+            <div className="my-stocks-right">
+                {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} /> : null}
+            </div>
+            </div>
         </div>
     )
 }

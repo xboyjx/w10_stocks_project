@@ -25,12 +25,12 @@ const ExternalStocksContainer = () => {
     } 
 
     return (
-        <>
-        <h1>Potato</h1>
-        <ExternalStockSearchForm handleSearchTerm={handleSearchTerm} />
-    {searchedResults.length > 0? <SearchResultsList searchedResults={searchedResults}/>: null }
+        <div className="external-stocks-container">
+        
+            <ExternalStockSearchForm handleSearchTerm={handleSearchTerm} />
+            {searchedResults.length > 0? <SearchResultsList searchedResults={searchedResults}/>: null }
 
-        </>
+        </div>
     )
 
 }

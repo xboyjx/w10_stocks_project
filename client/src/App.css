@@ -1,40 +1,64 @@
 .App {
   text-align: center;
+  box-sizing:border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid{
+  display:grid;
+  grid-template-areas:
+    'header header'
+    'stocks-container stocks-container'
+    'external-stocks-container external-stocks-container'
+    'footer footer';
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  background-color:aliceblue;
+  margin:0;
+  padding:1rem;
+  letter-spacing:0.1rem;
+  grid-area:header;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.footer{
+  background-color:aliceblue;
+  margin:0;
+  padding:1rem;
+  letter-spacing:0.1rem;
+  grid-area:footer;
 }
 
-.App-link {
-  color: #61dafb;
+.my-stocks-container{
+  margin:0;
+  padding:1rem;
+  /* display:flex; */
+  width:95%;
+  grid-area:stocks-container;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.my-stocks-container-box{
+  display:flex;
+}
+
+.my-stocks-container > h1{
+  margin:0;
+}
+
+.my-stocks-left{
+  flex:50%;
+  height:80vh;
+}
+
+.my-stocks-right{
+  border: 1px solid black;
+  flex:50%;
+  max-height:80vh;
+}
+
+.external-stocks-container{
+  grid-area: external-stocks-container;
 }
 
 th, td, table {
