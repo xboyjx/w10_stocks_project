@@ -1,9 +1,9 @@
 import MyStockItem from "./MyStockItem";
 
-const MyStocksList = ({stocks})  => {
+const MyStocksList = ({stocks, handleStockSelect})  => {
 
     const stockItems = stocks.map((stock, index) => {
-        return <MyStockItem stock={stock} key={index} />
+        return <MyStockItem stock={stock} key={index} index={index} handleStockSelect={handleStockSelect} />
     });
 
     return(
