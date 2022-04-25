@@ -7,11 +7,18 @@ const SearchResultsList = ({searchedResults}) => {
     })
 
     return (
-        <>
-        <ul>
-            {searchResults}
-        </ul>
-        </>
+        <div>
+            <table>
+                <tr>
+                   <th>Ticker</th>
+                   <th>Stock Name</th>
+                   <th>Exchange</th> 
+                   <th>amount</th>
+                   <th>add</th>
+                </tr>
+                {searchResults}
+            </table>
+        </div>
     )
 
 }
