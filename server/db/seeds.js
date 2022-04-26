@@ -8,15 +8,18 @@ db.userStocks.insertMany([
         email: "dennis@dennis.com",
         stocksHeld: [{
             stock: "AAPL",
-            noHeld: 100
+            noHeld: 100,
+            buyPrice: 105.24
         },
         {
             stock: "GOOG",
-            noHeld: 100
+            noHeld: 100,
+            buyPrice: 2253.7
         },
         {    
         stock: "TSLA",
-        noHeld: 100
+        noHeld: 100,
+        buyPrice:1000.53
     }]
     }
     // {

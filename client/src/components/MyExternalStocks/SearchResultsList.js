@@ -16,6 +16,7 @@ const SearchResultsList = ({searchedResults, addStock}) => {
                    <th>Stock Name</th>
                    <th>Exchange</th> 
                    <th>amount</th>
+                   <th>Buy Price</th>
                    <th>add</th>
                 </tr>
                 {searchResults}

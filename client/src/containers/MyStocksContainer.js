@@ -16,6 +16,7 @@ const MyStockContainer = ({stockToAdd}) => {
     const [loading, setIsLoading] = useState(true)
     const [userDetails, setUserDetails] = useState(null)
     const [selectedStock, setSelectedStock] = useState(null)
+    const [ticker, setTicker] = useState(null)
 
 
 
@@ -37,7 +38,7 @@ const MyStockContainer = ({stockToAdd}) => {
         fetchDB()
         setTimeout(() => {
             setIsLoading(false)
-        }, 3000)
+        }, 2000)
     }, [])
 
     const fetchDB = function() {
@@ -90,6 +91,7 @@ const MyStockContainer = ({stockToAdd}) => {
     const handleStockSelect = (index) => {
         const selectStock = myStockObjectList[index]
         setSelectedStock(selectStock)
+        setTicker(selectStock.meta.symbol)
     }
 
     return(
@@ -101,7 +103,7 @@ const MyStockContainer = ({stockToAdd}) => {
                 {loading === true ? <PulseLoader /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails}/>}
             </div>
             <div className="my-stocks-right">
-                {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} /> : null}
+                {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} ticker={ticker} /> : null}
             </div>
             </div>
         </div>
