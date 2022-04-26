@@ -2,7 +2,9 @@ import SearchResult from './SearchResult'
 
 const SearchResultsList = ({searchedResults, addStock}) => {
 
-    const searchResults = searchedResults.map((result, index) => {
+    const filteredSearchedResults = searchedResults.filter(result => result.exchange == "NASDAQ" || result.exchange =="LSE" || result.exchange == "NYSE")
+
+    const searchResults = filteredSearchedResults.map((result, index) => {
         return <SearchResult result = {result} key={index} addStock={addStock}/>
     })
 
