@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import MyStocksList from '../components/MyStocks/MyStocksList';
+import StockService from '../services/StockServices';
 
 import {css} from '@emotion/react';
 // import ClipLoader from 'react-spinners/ClipLoader';
@@ -7,7 +8,7 @@ import PulseLoader from 'react-spinners/PulseLoader'; //https://www.npmjs.com/pa
 
 import MyStockItemsGraph from '../components/MyStocks/MyStockItemsGraph';
 
-const MyStockContainer = () => {
+const MyStockContainer = ({stockToAdd}) => {
 
     const [myStockSearchTerms, setMyStockSearchTerms] = useState([])
     const [myStockObj, setMyStockObj] = useState(null)
@@ -16,11 +17,29 @@ const MyStockContainer = () => {
     const [userDetails, setUserDetails] = useState(null)
     const [selectedStock, setSelectedStock] = useState(null)
 
+
+
+    useEffect(() => {
+        if(stockToAdd !== null) {
+            addStockToUser(stockToAdd)
+        }
+    }, [stockToAdd])
+
+    const addStockToUser = function (stockToAdd) {
+        const temp = {...userDetails[0]}
+        temp.stocksHeld.push(stockToAdd)
+        StockService.updateUserDetails(temp)
+        
+        // .then(data => setUserDetails(data))
+        // setUserDetails(temp) 
+    }
+
+
     useEffect(() => {
         fetchDB()
         setTimeout(() => {
             setIsLoading(false)
-        }, 2000)
+        }, 3000)
     }, [])
 
     const fetchDB = function() {

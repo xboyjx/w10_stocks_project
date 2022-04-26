@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:9000/api/stocks/'
+const baseURL = 'http://localhost:9000/api/userStocks/'
 
 const StockService = {
     get userStocks() {
@@ -14,15 +14,19 @@ const StockService = {
         })
     },
 
-    updateBooking() {
-        return fetch(baseURL + booking._id, {
+    updateUserDetails(user) {
+        return fetch(baseURL + user._id, {
             method: 'PUT',
-            body: JSON.stringify()
-            .then(res => res.json())
+            body: JSON.stringify(user),
+            headers:{
+                'Content-Type': 'application/json'
+            }
         })
+            .then(res => res.json())
+        
     },
 
-    deleteBooking(id) {
+    deleteStock(id) {
         return fetch(baseURL + id, {
             method: 'DELETE'
         })

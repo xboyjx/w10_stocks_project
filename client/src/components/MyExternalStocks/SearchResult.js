@@ -1,14 +1,28 @@
+import { useState } from "react"
 
+const SearchResult = ({result, addStock}) => {
 
-const SearchResult = ({result}) => {
+    const [stockNumber, setStockNumber] = useState(null)
+    const handleChange = (event) => {
+        setStockNumber(event.target.value)
+    }
+
+    const handleClick = (event) => {
+        const stockToAdd = {
+            stock: result.symbol,
+            noHeld: stockNumber
+        }
+        addStock(stockToAdd)
+    }
+
     return (
         <>
             <tr>
                 <td>{result.symbol}</td>
                 <td>{result.instrument_name}</td>
                 <td>{result.exchange}</td>
-                <td><input type="number" /></td>
-                <td><button>add</button></td>
+                <td><input type="number" name="stockNumber" onChange={handleChange}/></td>
+                <td><button onClick={handleClick}>add</button></td>
             </tr>
         </>
     )

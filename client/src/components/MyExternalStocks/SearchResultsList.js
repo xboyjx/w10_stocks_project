@@ -1,9 +1,9 @@
 import SearchResult from './SearchResult'
 
-const SearchResultsList = ({searchedResults}) => {
+const SearchResultsList = ({searchedResults, addStock}) => {
 
     const searchResults = searchedResults.map((result, index) => {
-        return <SearchResult result = {result} key={index}/>
+        return <SearchResult result = {result} key={index} addStock={addStock}/>
     })
 
     return (
