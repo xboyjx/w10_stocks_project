@@ -10,7 +10,7 @@ const SearchResult = ({result, addStock}) => {
     const handleClick = (event) => {
         const stockToAdd = {
             stock: result.symbol,
-            noHeld: stockNumber
+            noHeld: parseInt(stockNumber)
         }
         addStock(stockToAdd)
     }

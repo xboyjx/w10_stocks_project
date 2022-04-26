@@ -13,7 +13,9 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails})  => {
         stockValues.push(stocks[i].values[0].close)
     }
 
+    // console.log(userDetails)
     const numberHeld = userDetails[0].stocksHeld.map(({noHeld}) => (noHeld))
+    
 
     let totalVal = 0
     for(let i = 0; i<numberHeld.length; i++){
