@@ -9,6 +9,7 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails})  => {
     // const stockValues = stocks.map(({values}) => {values[0].close})
     let stockValues = []
     for(let i = 0; i<stocks.length; i++){
+        // console.log(stocks[i])
         stockValues.push(stocks[i].values[0].close)
     }
 
