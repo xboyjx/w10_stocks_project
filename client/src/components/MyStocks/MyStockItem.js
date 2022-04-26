@@ -12,7 +12,7 @@ const MyStockItem = ({stock, index, handleStockSelect, userDetails}) => {
                 <td onClick={handleClick}>{stock.meta.symbol}</td>
                 <td>{userDetails[0].stocksHeld[index].noHeld}</td>
                 <td>{Math.round(stock.values[0].close).toFixed(2)}</td>
-                <td>{Math.round(userDetails[0].stocksHeld[index].noHeld * stock.values[0].close)}</td>
+                <td>{Math.round(userDetails[0].stocksHeld[index].noHeld * stock.values[0].close).toFixed(2)}</td>
             </tr>
         </>
     )
