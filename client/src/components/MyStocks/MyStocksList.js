@@ -22,15 +22,14 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails})  => {
     }
 
     return(
-        <div>
+        <div className="my-stocks-list">
             <h2>Total value: {totalVal} </h2>
-            <table>
+            <table className="table">
                 <tr>
-                    <th>Stock Name</th>
-                    <th>Number of Stocks</th>
-                    <th>Current Price</th>
+                    <th>Stock</th>
+                    <th>Amount</th>
+                    <th>Price</th>
                     <th>Holding Value</th>
-                    
                 </tr>
                 {stockItems}
             </table>
