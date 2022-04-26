@@ -29,9 +29,7 @@ const MyStockContainer = ({stockToAdd}) => {
         const temp = {...userDetails[0]}
         temp.stocksHeld.push(stockToAdd)
         StockService.updateUserDetails(temp)
-        
-        // .then(data => setUserDetails(data))
-        // setUserDetails(temp) 
+        .then(()=> fetchDB()) 
     }
 
 
