@@ -26,7 +26,7 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails})  => {
 
     return(
         <div className="my-stocks-list">
-            <h2>Total value: {Math.round(totalVal).toFixed(2)} </h2>
+            <h2>Total value: £{Math.round(totalVal).toFixed(2)} </h2>
             <table className="table">
                 <tr>
                     <th>Stock</th>
