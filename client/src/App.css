@@ -72,9 +72,24 @@ td{
   text-align:center;
 }
 
+.red{
+  color:red;
+}
+
+.green{
+  color:green;
+}
 th, td, table {
   border: 1px solid black;
   margin: 0px
+}
+
+.stock-symbol{
+  font-weight:bold;
+}
+
+.stock-symbol:hover{
+  cursor:pointer;
 }
 
 .my-stock-items-graph{

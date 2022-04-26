@@ -2,13 +2,12 @@ import {useEffect, useState} from 'react';
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 
-const MyStockItemsGraph = ({selectedStock}) => {
+const MyStockItemsGraph = ({selectedStock, ticker}) => {
 
     const [data, setData] = useState(null)
     const [interval, setInterval] = useState("1month")
-    const [ticker, setTicker] = useState(selectedStock.meta.symbol)
-    console.log(selectedStock.stock)
     const [myStockData, setMyStockData] = useState(null)
+    
 
     const handleClick = (event) => {
         setInterval(event.target.value)
@@ -24,7 +23,7 @@ const MyStockItemsGraph = ({selectedStock}) => {
 
         useEffect(() => {
             fetchMyStockData(ticker)
-        }, [selectedStock, interval])
+        }, [ticker, interval])
 
     useEffect(() => {
         if (myStockData !== null ){
@@ -49,11 +48,11 @@ const MyStockItemsGraph = ({selectedStock}) => {
 
     const options = {
         title: {
-            text:'last 30 months stock close price'
+            text:`last 30 ${interval} stock close price`
     },
     xAxis: {
         title: {
-            text:'month'
+            text:`${interval}`
         }
     },
     yAxis: {
@@ -63,7 +62,7 @@ const MyStockItemsGraph = ({selectedStock}) => {
     },
     series: [
         {
-            name: 'Monthly close',
+            name: `${interval} close`,
             data: data
         }
     ]
@@ -73,7 +72,7 @@ const MyStockItemsGraph = ({selectedStock}) => {
         <div className="my-stock-items-graph">
             <div className="stock-details">
                 <h3>STOCK: {selectedStock.meta.symbol} : EXCHANGE: {selectedStock.meta.exchange}</h3>
-                <h4>{selectedStock.meta.interval}</h4>
+                <h4>{interval}</h4>
                 <h4>CURRENCY: {selectedStock.meta.currency}</h4>
                 <button onClick={handleClick} value="1h">Hourly</button>
                 <button onClick={handleClick} value="1day">Daily</button>
