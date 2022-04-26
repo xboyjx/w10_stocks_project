@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import MyStocksList from '../components/MyStocks/MyStocksList';
+// import StockService from '../services/StockServices';
 
 import {css} from '@emotion/react';
 // import ClipLoader from 'react-spinners/ClipLoader';
@@ -16,11 +17,23 @@ const MyStockContainer = () => {
     const [userDetails, setUserDetails] = useState(null)
     const [selectedStock, setSelectedStock] = useState(null)
 
+    // useEffect(() => {
+    //     if(stockToAdd !== null) {
+    //         addStockToUser(stockToAdd)
+    //     }
+    // }, [stockToAdd])
+
+    // const addStockToUser = function (stockToAdd) {
+    //     const temp = {...userDetails[0]}
+    //     temp.stocksHeld.push(stockToAdd)
+    //     setUserDetails(temp) 
+    // }
+
     useEffect(() => {
         fetchDB()
         setTimeout(() => {
             setIsLoading(false)
-        }, 2000)
+        }, 3000)
     }, [])
 
     const fetchDB = function() {
