@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import MyStocksList from '../components/MyStocks/MyStocksList';
 import StockService from '../services/StockServices';
+import MyPieChart from '../components/MyStocks/MyPieChart';
 
 import {css} from '@emotion/react';
 // import ClipLoader from 'react-spinners/ClipLoader';
@@ -17,6 +18,7 @@ const MyStockContainer = ({stockToAdd}) => {
     const [userDetails, setUserDetails] = useState(null)
     const [selectedStock, setSelectedStock] = useState(null)
     const [ticker, setTicker] = useState(null)
+    const [pieData, setPieData] = useState(null)
 
 
 
@@ -70,7 +72,7 @@ const MyStockContainer = ({stockToAdd}) => {
     const randKey = keys[Math.floor(Math.random() * keys.length)]
 
     const fetchMyStockObj = function(searchValues){
-        fetch(`https://api.twelvedata.com/time_series?symbol=${searchValues.toString()}&interval=1month&apikey=${randKey}`)
+        fetch(`https://api.twelvedata.com/time_series?symbol=${searchValues.toString()}&interval=1month&apikey=785770a8e60c4e02a239d14734459b72`)
         .then(res => res.json())
         .then(data => setMyStockObj(data))
     }
@@ -92,6 +94,11 @@ const MyStockContainer = ({stockToAdd}) => {
         const selectStock = myStockObjectList[index]
         setSelectedStock(selectStock)
         setTicker(selectStock.meta.symbol)
+        setPieData(null)
+    }
+
+    const send = (data) => {
+        setPieData(data)
     }
 
     return(
@@ -99,11 +106,12 @@ const MyStockContainer = ({stockToAdd}) => {
             
             <div className="my-stocks-container-box">
             <div className="my-stocks-left">
-            <h2>My Stocks</h2>
-                {loading === true ? <PulseLoader /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails}/>}
+
+                {loading === true ? <PulseLoader className="loader" /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails} send={send}/>}
             </div>
             <div className="my-stocks-right">
                 {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} ticker={ticker} /> : null}
+                {pieData !== null ? <MyPieChart pieData={pieData}/>: null}
             </div>
             </div>
         </div>

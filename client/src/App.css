@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
 .App {
   text-align: center;
   box-sizing:border-box;
-  
+  font-family:'Poppins', sans-serif;
 }
 
 .grid{
@@ -20,6 +22,7 @@
   padding:1rem;
   letter-spacing:0.1rem;
   grid-area:header;
+  font-family:'Poppins', sans-serif;
 }
 
 .footer{
@@ -28,18 +31,24 @@
   padding:1rem;
   letter-spacing:0.1rem;
   grid-area:footer;
+  font-family:'Poppins', sans-serif;
 }
 
 .my-stocks-container{
   margin:0;
   padding:1rem;
   /* display:flex; */
-  width:95%;
+  width:97%;
   grid-area:stocks-container;
 }
 
+
+
+
 .my-stocks-container-box{
   display:flex;
+  justify-content:space-between;
+  font-family:'Poppins', sans-serif;
 }
 
 .my-stocks-container > h1{
@@ -47,22 +56,38 @@
 }
 
 .my-stocks-left{
-  flex:50%;
+  flex:40%;
   height:80vh;
+  border-radius:5px;
+  margin-right:5px;
+  display:flex;
+  justify-content:center;
+  
+  overflow-y: scroll;
+}
+
+.my-stocks-left > h2{
+  margin:0;
 }
 
 .my-stocks-right{
   border: 2px solid black;
   border-radius:5px;
-  flex:50%;
-  max-height:80vh;
-  
+  flex:40%;
+  height:82vh;
+  margin-left:5px;
+  padding-top:1rem;
 }
 
 .my-stocks-list > h2{
   font-size:1.2rem;
+  text-align:center;
 }
 
+.portfolio-stats{
+  display:flex;
+  justify-content:space-evenly;
+}
 .table > tr > th  {
   padding:0.5rem;
 }
@@ -81,11 +106,13 @@ td{
 }
 th, td, table {
   border: 1px solid black;
-  margin: 0px
+  border-collapse:collapse;
+  margin: 0px;
 }
 
 .stock-symbol{
   font-weight:bold;
+  color:blue;
 }
 
 .stock-symbol:hover{
@@ -100,10 +127,46 @@ th, td, table {
   padding-left:1rem;
 }
 
-.my-stock-items-graph > .stock-details h3, .my-stock-items-graph > .stock-details h4{
+.my-stock-items-graph > .stock-details h3, .my-stock-items-graph > .stock-details h4, .my-stock-items-graph > .stock-details p{
   margin:0;
 }
 
+.stock-details{
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.info{
+  font-weight:normal;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0.2rem;
+}
+
+.buttons > button{
+  padding:0.2rem;
+  margin-left:0.8rem;
+  width:60px;
+  background-color:rgb(113, 95, 218);
+  border-radius:5px;
+  color:white;
+  margin-top:0.8rem;
+}
+
+.buttons > button:hover{
+  background-color:rgba(114, 95, 218, 0.329);
+  color:black;
+  cursor:pointer;
+}
+
+.buttons > button:focus{
+  background-color:rgba(114, 95, 218, 0.329);
+  color:black;
+}
 .external-stocks-container{
   padding:1rem;
   grid-area: external-stocks-container;
