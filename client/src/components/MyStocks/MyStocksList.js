@@ -1,17 +1,24 @@
 import { useState, useEffect } from "react";
 import MyStockItem from "./MyStockItem";
 
-const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
+const MyStocksList = ({stocks, handleStockSelect, userDetails, send, deleteStockFromUser})  => {
   
-    const stockItems = stocks.map((stock, index) => {
-        return <MyStockItem stock={stock} key={index} index={index} handleStockSelect={handleStockSelect} userDetails={userDetails} />
-    });
+    // const stockItems = stocks.map((stock, index) => {
+        // return <MyStockItem stock={stock} key={index} index={index} handleStockSelect={handleStockSelect} userDetails={userDetails} deleteStockFromUser={deleteStockFromUser} />
+    // });
+
+    let stockItems = []
+    for (let i = 0; i< stocks.length; i++){
+        stockItems.push(<MyStockItem stock={stocks[i]} key={i} index={i} handleStockSelect={handleStockSelect} userDetails={userDetails} deleteStockFromUser={deleteStockFromUser} />)
+    }
 
     //TOTAL PORTFOLIO VALUE
     // const stockValues = stocks.map(({values}) => {values[0].close})
+    console.log(userDetails[0])
     let stockValues = []
     for(let i = 0; i<stocks.length; i++){
-        // console.log(stocks[i])
+        console.log(stocks[i])
+        // console.log(stocks.length) 
         stockValues.push(stocks[i].values[0].close)
     }
 
@@ -28,7 +35,9 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
 
     //TOTAL PROFIT/LOSS
     let buyPrices = []
-    for (let i=0; i<stocks.length; i++){
+    for (let i=0; i<userDetails[0].stocksHeld.length; i++){
+        console.log(userDetails[0].stocksHeld.length)
+        console.log(userDetails[0].stocksHeld[i].buyPrice)
         buyPrices.push(userDetails[0].stocksHeld[i].buyPrice)
         // console.log(buyPrices)
     }

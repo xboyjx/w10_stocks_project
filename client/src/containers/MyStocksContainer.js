@@ -32,7 +32,18 @@ const MyStockContainer = ({stockToAdd}) => {
         const temp = {...userDetails[0]}
         temp.stocksHeld.push(stockToAdd)
         StockService.updateUserDetails(temp)
-        .then(()=> fetchDB()) 
+        .then( () => fetchDB()) 
+    }
+
+    const deleteStockFromUser = function(stockToDelete){
+        const temp = {...userDetails[0]}
+        const index = temp.stocksHeld.findIndex(temporary => {
+            return temporary.stock == stockToDelete.stock && temporary.noHeld == stockToDelete.noHeld
+        })
+        // console.log(index)
+        temp.stocksHeld.splice(index, 1)
+        StockService.updateUserDetails(temp)
+        .then( () => fetchDB())
     }
 
 
@@ -107,7 +118,7 @@ const MyStockContainer = ({stockToAdd}) => {
             <div className="my-stocks-container-box">
             <div className="my-stocks-left">
 
-                {loading === true ? <PulseLoader className="loader" /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails} send={send}/>}
+                {loading === true ? <PulseLoader className="loader" /> : <MyStocksList stocks={myStockObjectList} handleStockSelect={handleStockSelect} userDetails={userDetails} send={send} deleteStockFromUser={deleteStockFromUser}/>}
             </div>
             <div className="my-stocks-right">
                 {selectedStock !== null ? <MyStockItemsGraph selectedStock={selectedStock} ticker={ticker} /> : null}
