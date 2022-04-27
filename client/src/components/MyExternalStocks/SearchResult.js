@@ -2,8 +2,8 @@ import { useState } from "react"
 
 const SearchResult = ({result, addStock}) => {
 
-    const [stockNumber, setStockNumber] = useState(null)
-    const [buyPrice, setBuyPrice] = useState(null)
+    const [stockNumber, setStockNumber] = useState("")
+    const [buyPrice, setBuyPrice] = useState("")
     const handleChange = (event) => {
         setStockNumber(event.target.value)
     }
@@ -15,6 +15,8 @@ const SearchResult = ({result, addStock}) => {
             buyPrice: parseFloat(buyPrice)
         }
         addStock(stockToAdd)
+        setStockNumber("")
+        setBuyPrice("")
     }
 
     const handlePriceChange = (event) => {
@@ -27,8 +29,8 @@ const SearchResult = ({result, addStock}) => {
                 <td>{result.symbol}</td>
                 <td>{result.instrument_name}</td>
                 <td>{result.exchange}</td>
-                <td><input type="number" name="stockNumber" onChange={handleChange}/></td>
-                <td><input type="number" name="buyPrice" onChange={handlePriceChange}></input> </td>
+                <td><input type="number" name="stockNumber" onChange={handleChange} value={stockNumber}/></td>
+                <td><input type="number" name="buyPrice" onChange={handlePriceChange} value={buyPrice}></input> </td>
                 <td><button className="search-button" onClick={handleClick}>add</button></td>
             </tr>
         </>

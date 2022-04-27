@@ -4,10 +4,12 @@
   text-align: center;
   box-sizing:border-box;
   font-family:'Poppins', sans-serif;
+  height: 100vh;
 }
 
 .grid{
   display:grid;
+  height: 100vh;
   grid-template-areas:
     'header header'
     'stocks-container stocks-container'
@@ -25,16 +27,18 @@
   letter-spacing:0.1rem;
   grid-area:header;
   font-family:'Poppins', sans-serif;
+  height: 3rem;
 }
 
 .footer{
   background-color:rgb(192, 222, 247);
   color:rgb(24, 15, 77);
   margin:0;
-  padding:1rem;
+  padding:2rem;
   letter-spacing:0.1rem;
   grid-area:footer;
   font-family:'Poppins', sans-serif;
+  height: 4rem;
 }
 
 .my-stocks-container{
@@ -43,7 +47,7 @@
   /* display:flex; */
   width:97%;
   grid-area:stocks-container;
-  
+  height: 80vh;
 }
 
 
@@ -61,7 +65,7 @@
 
 .my-stocks-left{
   flex:40%;
-  height:80vh;
+  height:50vh;
   border-radius:5px;
   margin-right:5px;
   display:flex;
@@ -79,7 +83,7 @@
   border: 2px solid black;
   border-radius:5px;
   flex:40%;
-  height:75vh;
+  height:55vh;
   margin-left:5px;
   padding-top:1rem;
 }
