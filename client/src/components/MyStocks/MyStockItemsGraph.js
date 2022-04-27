@@ -13,11 +13,11 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
         setInterval(event.target.value)
     }
 
-    const keys = ["b9807276d5104b33b92d92ff766ab531", "45bcd3cd4e5744298c4fdb0dcd6a1249", "f95ae7b120094694aa29d206c16751f4", "4d3df07bd71d4d198ec7b0071f70c982", "8603921c05d4466f92b11e6ebb617a1b"]
+    const keys = ["b9807276d5104b33b92d92ff766ab531", "45bcd3cd4e5744298c4fdb0dcd6a1249", "f95ae7b120094694aa29d206c16751f4", "4d3df07bd71d4d198ec7b0071f70c982", "8603921c05d4466f92b11e6ebb617a1b", "785770a8e60c4e02a239d14734459b72"]
     const randKey = keys[Math.floor(Math.random() * keys.length)]
 
     const fetchMyStockData = function(ticker){
-        fetch(`https://api.twelvedata.com/time_series?symbol=${ticker}&interval=${interval}&apikey=785770a8e60c4e02a239d14734459b72`)
+        fetch(`https://api.twelvedata.com/time_series?symbol=${ticker}&interval=${interval}&apikey=${randKey}`)
         .then(res => res.json())
         .then(data => setMyStockData(data))}
 
