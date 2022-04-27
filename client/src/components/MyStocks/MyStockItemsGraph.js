@@ -17,7 +17,7 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
     const randKey = keys[Math.floor(Math.random() * keys.length)]
 
     const fetchMyStockData = function(ticker){
-        fetch(`https://api.twelvedata.com/time_series?symbol=${ticker}&interval=${interval}&apikey=${randKey}`)
+        fetch(`https://api.twelvedata.com/time_series?symbol=${ticker}&interval=${interval}&apikey=785770a8e60c4e02a239d14734459b72`)
         .then(res => res.json())
         .then(data => setMyStockData(data))}
 
@@ -33,7 +33,7 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
 
     const makeChart = () => {
         const stockDataValuesList = myStockData.values.map((value, index) => {
-            return parseInt(value.close)
+            return parseFloat(value.close)
         }) 
         let reversedArray =[]
             for (let i=0; i<stockDataValuesList.length; i++){
@@ -71,9 +71,17 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
     return(
         <div className="my-stock-items-graph">
             <div className="stock-details">
-                <h3>STOCK: {selectedStock.meta.symbol} : EXCHANGE: {selectedStock.meta.exchange}</h3>
-                <h4>{interval}</h4>
-                <h4>CURRENCY: {selectedStock.meta.currency}</h4>
+                <div>
+                <h3>STOCK:    <span className="info">{selectedStock.meta.symbol}  </span></h3>
+                 <h4>EXCHANGE: <span className="info">{selectedStock.meta.exchange}</span></h4>
+                </div>
+                <div>
+                <h3>INTERVAL: <span className="info">{interval}</span></h3>
+                <h4>CURRENCY: <span className="info">{selectedStock.meta.currency}</span></h4>
+
+                </div>
+            </div>
+            <div className="buttons">
                 <button onClick={handleClick} value="1h">Hourly</button>
                 <button onClick={handleClick} value="1day">Daily</button>
                 <button onClick={handleClick} value="1week">Weekly</button>

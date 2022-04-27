@@ -11,8 +11,8 @@ const SearchResult = ({result, addStock}) => {
     const handleClick = (event) => {
         const stockToAdd = {
             stock: result.symbol,
-            noHeld: parseInt(stockNumber),
-            buyPrice: parseInt(buyPrice)
+            noHeld: parseFloat(stockNumber),
+            buyPrice: parseFloat(buyPrice)
         }
         addStock(stockToAdd)
     }
