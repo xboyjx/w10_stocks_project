@@ -196,8 +196,10 @@ th, td, table {
   padding:1rem;
   grid-area: external-stocks-container;
   background-color:rgb(50, 53, 71);
-  color:white;
+  
 }
+
+
 
 
 
@@ -205,11 +207,18 @@ th, td, table {
 .search-container{
   display:flex;
   align-items:center;
+  justify-content:center;
+}
+
+.results-container{
+  display:flex;
+  justify-content:center;
 }
 
 .search-title{
   font-family:'Poppins', sans-serif;
   margin-right:1rem;
+  color:white;
 }
 
 .search-bar{
