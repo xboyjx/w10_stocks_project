@@ -68,13 +68,14 @@
 
 .my-stocks-left > h2{
   margin:0;
+ 
 }
 
 .my-stocks-right{
   border: 2px solid black;
   border-radius:5px;
   flex:40%;
-  height:82vh;
+  height:75vh;
   margin-left:5px;
   padding-top:1rem;
 }
@@ -84,17 +85,31 @@
   text-align:center;
 }
 
+.portfolio-title{
+  background-color:rgb(178, 178, 192);
+
+  margin:0;
+}
+
 .portfolio-stats{
   display:flex;
   justify-content:space-evenly;
+  background-color:rgb(239, 241, 241);
+  margin-bottom:1rem;
 }
 .table > tr > th  {
   padding:0.5rem;
+  background-color:rgb(239, 241, 241);
+}
+
+.table > tr > th{
+  background-color:rgb(178, 178, 192);
 }
 
 td{
   padding:0.25rem;
   text-align:center;
+  background-color:rgb(239, 241, 241);
 }
 
 .red{
@@ -170,4 +185,20 @@ th, td, table {
 .external-stocks-container{
   padding:1rem;
   grid-area: external-stocks-container;
+}
+
+.search-container{
+  display:flex;
+  align-items:center;
+}
+
+.search-title{
+  font-family:'Poppins', sans-serif;
+  margin-right:1rem;
+}
+
+.search-bar{
+  padding:0.2rem;
+  height:1rem;
+  font-family:'Poppins', sans-serif;
 }

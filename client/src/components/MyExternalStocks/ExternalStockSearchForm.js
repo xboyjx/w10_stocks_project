@@ -8,10 +8,11 @@ const ExternalStockSearchForm = ({handleSearchTerm}) => {
 
     return (
         <>
-        <h2>External Stock Search Form</h2>
+        <div className="search-container">
+            <h2 className="search-title">Add a Stock:</h2>
 
-        <input type = "text" placeholder= "Search" name="searchedTerm" onChange={handleChange} />
-
+            <input className="search-bar" type = "text" placeholder= "Search" name="searchedTerm" onChange={handleChange} />
+        </div>
         </>
     )
 
