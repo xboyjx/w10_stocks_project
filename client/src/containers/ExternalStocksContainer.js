@@ -26,7 +26,7 @@ const ExternalStocksContainer = ({addStock}) => {
 
     return (
         <div className="external-stocks-container">
-        
+          
             <ExternalStockSearchForm handleSearchTerm={handleSearchTerm} />
             {searchedResults.length > 0? <SearchResultsList searchedResults={searchedResults} addStock={addStock} />: null }
 

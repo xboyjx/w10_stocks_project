@@ -29,7 +29,7 @@ const SearchResult = ({result, addStock}) => {
                 <td>{result.exchange}</td>
                 <td><input type="number" name="stockNumber" onChange={handleChange}/></td>
                 <td><input type="number" name="buyPrice" onChange={handlePriceChange}></input> </td>
-                <td><button onClick={handleClick}>add</button></td>
+                <td><button className="search-button" onClick={handleClick}>add</button></td>
             </tr>
         </>
     )

@@ -39,7 +39,23 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
             for (let i=0; i<stockDataValuesList.length; i++){
                 reversedArray.unshift(stockDataValuesList[i])
             }
-        setData(reversedArray)
+        // setData(reversedArray)
+        const stockDataDatesList = myStockData.values.map((value, index) => {
+            return (value.datetime)
+        }) 
+
+        let reversedArrayTwo =[]
+            for (let i=0; i<stockDataDatesList.length; i++){
+                reversedArrayTwo.unshift(stockDataDatesList[i])
+            }
+
+            let dataSet =[]
+            for (let i=0; i<stockDataDatesList.length; i++){
+                let name = reversedArrayTwo[i]
+                let value = parseInt(reversedArray[i])
+                dataSet.push({ name : name, y:value});
+            } setData(dataSet)
+        
     }
     
     // const stockDataDatesList = myStockData.values.map((value, index) => {
@@ -62,7 +78,7 @@ const MyStockItemsGraph = ({selectedStock, ticker}) => {
     },
     series: [
         {
-            name: `${interval} close`,
+            name: `${interval} close price`,
             data: data
         }
     ]

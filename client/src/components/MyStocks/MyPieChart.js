@@ -1,7 +1,7 @@
 import Highcharts from "highcharts/highstock";
 import PieChart from "highcharts-react-official";
 
-const MyPieChart = ({pieData}) => {
+const MyPieChart = ({pieData}) => { 
 
     const options = {
         title:{

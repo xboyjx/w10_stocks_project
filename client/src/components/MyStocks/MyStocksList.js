@@ -61,8 +61,8 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
         <div className="my-stocks-list">
             <h2 className="portfolio-title">MY Portfolio</h2>
             <div className="portfolio-stats">
-            <h3>Total value: USD {Math.round(totalVal).toFixed(2)} </h3>
-            {profitLoss > 0 ? <h3> P/L: <span className="green">USD {profitLoss}</span></h3>: <h3> P/L: £ <span className="red">{profitLoss}</span></h3>}
+            <h3>Total value: USD <span className="amount">{Math.round(totalVal).toFixed(2)}</span> </h3>
+            {profitLoss > 0 ? <h3> P/L: <span className="green amount">USD {profitLoss}</span></h3>: <h3> P/L: £ <span className="red">{profitLoss}</span></h3>}
             </div>
             <table className="table">
                 <tr>

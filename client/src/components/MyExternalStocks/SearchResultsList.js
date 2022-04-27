@@ -10,7 +10,7 @@ const SearchResultsList = ({searchedResults, addStock}) => {
 
     return (
         <div>
-            <table>
+            <table className="table">
                 <tr>
                    <th>Ticker</th>
                    <th>Stock Name</th>
