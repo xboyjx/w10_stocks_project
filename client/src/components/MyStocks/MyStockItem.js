@@ -6,7 +6,7 @@ const MyStockItem = ({stock, index, handleStockSelect, userDetails}) => {
     }
 
     const numberHeld = userDetails[0].stocksHeld[index].noHeld;
-    const currentPrice = stock.values[0].close;
+    const currentPrice = parseFloat(stock.values[0].close);
     const currentPriceFormat = currentPrice.toLocaleString("en-US", {style:"currency", currency:"USD"});
     const holdingValue = userDetails[0].stocksHeld[index].noHeld * stock.values[0].close;
     const newHoldingValue = holdingValue.toLocaleString("en-US", {style:"currency", currency:"USD"});
