@@ -25,6 +25,7 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
         runner = numberHeld[i]*stockValues[i]
         totalVal = totalVal+ runner
     }
+    const totalValue = totalVal.toLocaleString("en-US", {style:"currency", currency:"USD"})
 
     //TOTAL PROFIT/LOSS
     let buyPrices = []
@@ -38,7 +39,8 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
         runner = numberHeld[i]*buyPrices[i]
         totalSpend = totalSpend+runner
     }
-    const profitLoss = Math.round(totalVal-totalSpend).toFixed(2)
+    const pL = (totalVal-totalSpend)
+    const profitLoss = pL.toLocaleString("en-US", {style:"currency", currency:"USD"});
 
    //pie chart portfolio values data calculations
     //make an array of objects with y as key and holding value as value(stock values)
@@ -61,8 +63,8 @@ const MyStocksList = ({stocks, handleStockSelect, userDetails, send})  => {
         <div className="my-stocks-list">
             <h2 className="portfolio-title">MY Portfolio</h2>
             <div className="portfolio-stats">
-            <h3>Total value: USD <span className="amount">{Math.round(totalVal).toFixed(0)}</span> </h3>
-            {profitLoss > 0 ? <h3> P/L: <span className="green amount">USD {profitLoss}</span></h3>: <h3> P/L: £ <span className="red">{profitLoss}</span></h3>}
+            <h3>Total value: USD <span className="amount">{totalValue}</span> </h3>
+            {pL > 0 ? <h3> P/L: <span className="green amount"> {profitLoss}</span></h3>: <h3> P/L: <span className="red">{profitLoss}</span></h3>}
             </div>
             <table className="table">
                 <tr>
