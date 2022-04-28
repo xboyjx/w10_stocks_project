@@ -28,6 +28,8 @@
   grid-area:header;
   font-family:'Poppins', sans-serif;
   height: 3rem;
+  display:flex;
+  align-items:center;
 }
 
 .footer{
@@ -38,7 +40,9 @@
   letter-spacing:0.1rem;
   grid-area:footer;
   font-family:'Poppins', sans-serif;
-  height: 4rem;
+  height: 2rem;
+  display:flex;
+  align-items:center;
 }
 
 .my-stocks-container{
@@ -47,7 +51,7 @@
   /* display:flex; */
   width:97%;
   grid-area:stocks-container;
-  height: 80vh;
+  height: 75vh;
 }
 
 
