@@ -49,23 +49,23 @@
 
 
   
-  <table>
-    <tr>
+ <table>
+   <tr>
     <td>
-      <img width="423" alt="P3-2  Project Plnning - MSCOW" src="https://user-images.githubusercontent.com/88304522/167291808-ae93505b-1404-4f8d-a18b-ea6ac400f0ac.png">
-      </td>
-     <td>
+      <img width="1011" alt="P3-2  Project Plnning - MSCOW" src="https://user-images.githubusercontent.com/88304522/167291808-ae93505b-1404-4f8d-a18b-ea6ac400f0ac.png">
+    </td>
+    <td>
         <img width="1011" alt="P3-1  Project Planning - Trelo" src="https://user-images.githubusercontent.com/88304522/167291804-6b9ddce3-e88b-4871-bbcf-8b6a028891f9.png">
-      </td>
-
-    </tr>
-    <tr>
-     <td>
+    </td>
+   </tr>
+    
+   <tr>
+    <td>
         <img width="423" alt="P3-3  Project Planning - Node Tree" src="https://user-images.githubusercontent.com/88304522/167291815-9627a71b-0f31-40ba-a4c3-2d7cb2c2a887.png">
-      </td>
-     <td>
+    </td>
+    <td>
        <img width="341" alt="P12b-1 planning Inforamtion - Wireframe early" src="https://user-images.githubusercontent.com/88304522/167291819-caa32230-7f3e-4447-afd0-80a297c3a0e4.png">
-      </td>
-    </tr>
-   </table>
+    </td>
+   </tr>
+  </table>
 
