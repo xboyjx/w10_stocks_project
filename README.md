@@ -62,10 +62,10 @@
     
    <tr>
     <td>
-        <img width="423" alt="P3-3  Project Planning - Node Tree" src="https://user-images.githubusercontent.com/88304522/167291815-9627a71b-0f31-40ba-a4c3-2d7cb2c2a887.png">
+        <img width="1011" alt="P3-3  Project Planning - Node Tree" src="https://user-images.githubusercontent.com/88304522/167291815-9627a71b-0f31-40ba-a4c3-2d7cb2c2a887.png">
     </td>
     <td>
-       <img width="341" alt="P12b-1 planning Inforamtion - Wireframe early" src="https://user-images.githubusercontent.com/88304522/167291819-caa32230-7f3e-4447-afd0-80a297c3a0e4.png">
+       <img width="1011" alt="P12b-1 planning Inforamtion - Wireframe early" src="https://user-images.githubusercontent.com/88304522/167291819-caa32230-7f3e-4447-afd0-80a297c3a0e4.png">
     </td>
    </tr>
   </table>
