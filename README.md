@@ -102,6 +102,7 @@
       <li>sudo mkdir -p /System/Volumes/Data/data/db</li>
       <li>sudo chown -R `id -un` /System/Volumes/Data/data/db</li>
       <li>--dbpath /System/Volumes/Data/data/db</li>
+    </ul>
   <li>npm run seeds</li>
   <li>(in a new tab) npm run server:dev</li>
       
