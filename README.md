@@ -69,4 +69,63 @@
     </td>
    </tr>
   </table>
+  
+  <h2>Screenshots</h2>
+  
+  <table>
+   <tr>
+    <td>
+      <img width="1280" alt="StockTracker_1" src="https://user-images.githubusercontent.com/88304522/167291966-422117b0-c7f1-4771-bf61-391b430d878a.png">
 
+    </td>
+    <td>
+        <img width="1280" alt="StockTracker_2" src="https://user-images.githubusercontent.com/88304522/167291970-87a0ba87-8228-4610-a476-661eddb17ecb.png">
+
+    </td>
+   </tr>
+    
+   <tr>
+    <td>
+        <img width="1280" alt="StockTracker_3" src="https://user-images.githubusercontent.com/88304522/167291973-c8821aa3-fd2c-4c39-bbe0-38d9222c735a.png">
+
+    </td>
+    <td>
+       <img width="1280" alt="StockTracker_4" src="https://user-images.githubusercontent.com/88304522/167291978-b26272c6-06bc-47c9-ad23-bfe7a925f635.png">
+    </td>
+   </tr>
+  </table>
+
+<h2>How to Run</h2>
+<ul>
+  <li>Fork the repository and then clone it clone to local computer</li>
+  <li>cd server</li>
+  <li>npm install</li>
+  <li>Get mongod up and running.  The following terminal commands work for me if you're not sure how:
+    <ul>
+      <li>sudo mkdir -p /System/Volumes/Data/data/db</li>
+      <li>sudo chown -R `id -un` /System/Volumes/Data/data/db</li>
+      <li>--dbpath /System/Volumes/Data/data/db</li>
+  <li>npm run seeds</li>
+  <li>(in a new tab) npm run server:dev</li>
+      
+  <li>(in a new tab) cd ../client</li>
+  <li>npm install</li>
+      <li>npm start</li>
+ </ul>
+ 
+ <h2>What we learned</h2>
+<ul>
+  <li>Git - this was the first time working on a project in a team, and we’d just been introduced to using different branches and merging.  It wasn’t without its issues, but overall we made effective use of branches and pull requests while working independently on components and features.</li>
+  <li>Pick APIs Carefully - we rushed into choosing the API but it would be beneficial to carefully consider the desired functions of the app and whether the API will supply the data we need in the way we need.</li>
+  <li>Always make sure your useEffect isn’t going to go rogue - forgetting the square brackets results in about 30,000 fetch requests in less than a minute.  Good job the API had a limit of 8 requests per minute!</li>
+  <li>Take time, don’t let code runaway - Due to the short timeframe for the project, we prioritised working code over clear and DRY code, meaning it’s hard work to navigate the code as it currently stands. </li>
+  <li>Charts - This is here as an example of having something we don’t know anything about, in this case the highcharts library, getting stuck in and being able to use it effectively.  Simple, but no doubt this will be a vital tool in our learning moving forward.</li>
+ </ul>
+
+ <h2>What we would do differently</h2>
+<ul>
+  <li>We still haven’t managed to get the delete stock function to render the updated list to the page without crashing the page.</li>
+  <li>More data for the user - the app is currently very limited in terms of analytical tools.</li>
+  <li>Setting up the login page to allow for different users.</li>
+</ul>
+ 
